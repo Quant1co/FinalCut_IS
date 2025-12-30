@@ -1,0 +1,1872 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+	<!-- ==================== КОМАНДА /START ==================== -->
+	<category>
+		<pattern>START</pattern>
+		<template>
+			<random>
+				<li>
+					Добро пожаловать, <get name="user-name"/>! Я бот-эксперт по азбуке Морзе. Спросите меня о буквах: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь.
+				</li>
+				<li>
+					Привет, <get name="user-name"/>! Я умею распознавать буквы азбуки Морзе и рассказывать о них. Попробуйте спросить!
+				</li>
+				<li>
+					Здравствуйте, <get name="user-name"/>! Я Морзе-бот. Могу рассказать о буквах азбуки Морзе: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь.
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ START</pattern>
+		<template>
+			<srai>START</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>START *</pattern>
+		<template>
+			<srai>START</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ START *</pattern>
+		<template>
+			<srai>START</srai>
+		</template>
+	</category>
+	<!-- ==================== ЗНАКОМСТВО И ИМЯ ==================== -->
+	<category>
+		<pattern>_ меня зовут *</pattern>
+		<template>
+			<srai>
+				меня зовут <star index="2"/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>меня зовут *</pattern>
+		<template>
+			<random>
+				<li>
+					Приятно познакомиться, <set name="user-name">
+						<star/>
+					</set>! Я бот-эксперт по азбуке Морзе.
+				</li>
+				<li>
+					Здравствуйте, <set name="user-name">
+						<star/>
+					</set>! Рад знакомству! Спрашивайте меня об азбуке Морзе.
+				</li>
+				<li>
+					Добро пожаловать, <set name="user-name">
+						<star/>
+					</set>! Я помогу вам узнать о буквах азбуки Морзе.
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Я *</pattern>
+		<template>
+			<srai>
+				меня зовут <star/>
+			</srai>
+		</template>
+	</category>
+
+	<!-- ==================== КАК МЕНЯ ЗОВУТ ==================== -->
+	<category>
+		<pattern>КАК МЕНЯ ЗОВУТ</pattern>
+		<template>
+			<random>
+				<li>
+					Я кажется знаю, вас зовут — <get name="user-name"/>!
+				</li>
+				<li>
+					Если не ошибаюсь, вас зовут <get name="user-name"/>.
+				</li>
+				<li>
+					Вы же <get name="user-name"/>, верно?
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>МОЁ ИМЯ</pattern>
+		<template>
+			Вас зовут <get name="user-name"/>.
+		</template>
+	</category>
+
+	<category>
+		<pattern>МОЕ ИМЯ</pattern>
+		<template>
+			<srai>МОЁ ИМЯ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК МОЁ ИМЯ</pattern>
+		<template>
+			<srai>КАК МЕНЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК МОЕ ИМЯ</pattern>
+		<template>
+			<srai>КАК МЕНЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ТЫ ЗНАЕШЬ КАК МЕНЯ ЗОВУТ</pattern>
+		<template>
+			<srai>КАК МЕНЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ТЫ ПОМНИШЬ КАК МЕНЯ ЗОВУТ</pattern>
+		<template>
+			<srai>КАК МЕНЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== ПРИВЕТСТВИЯ ==================== -->
+	<category>
+		<pattern>ПРИВЕТ</pattern>
+		<template>
+			<random>
+				<li>
+					Привет, <get name="user-name"/>! О чём хочешь поговорить?
+				</li>
+				<li>Привет! Я бот, умеющий распознавать буквы азбуки Морзе и рассказывать о них.</li>
+				<li>
+					Приветствую, <get name="user-name"/>! Спрашивайте об азбуке Морзе!
+				</li>
+				<li>
+					Здравствуйте, <get name="user-name"/>! Рад вас видеть!
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЗДРАВСТВУЙ</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЗДРАВСТВУЙТЕ</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ХАЙ</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЗДОРОВО</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДОБРЫЙ ДЕНЬ</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДОБРОЕ УТРО</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДОБРЫЙ ВЕЧЕР</pattern>
+		<template>
+			<srai>ПРИВЕТ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== КАК ДЕЛА ==================== -->
+	<category>
+		<pattern>КАК ДЕЛА</pattern>
+		<template>
+			<random>
+				<li>У меня отлично, сижу у вас в девайсе!</li>
+				<li>Всё отлично, курю бамбук.</li>
+				<li>Прекрасно! Передаю точки и тире весь день.</li>
+				<li>
+					Хорошо, спасибо что спросили, <get name="user-name"/>! А у вас?
+				</li>
+				<li>
+					Отлично, <get name="user-name"/>! Готов рассказывать об азбуке Морзе!
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ТЫ</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПОЖИВАЕШЬ</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ЖИЗНЬ</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО НОВОГО</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ КАК ДЕЛА</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ДЕЛА _</pattern>
+		<template>
+			<srai>КАК ДЕЛА</srai>
+		</template>
+	</category>
+
+	<!-- ==================== КТО ТЫ / О БОТЕ ==================== -->
+	<category>
+		<pattern>КТО ТЫ</pattern>
+		<template>
+			<random>
+				<li>
+					Я бот-эксперт по азбуке Морзе, <get name="user-name"/>! Могу распознавать и рассказывать о буквах: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь.
+				</li>
+				<li>Я чат-бот, который знает всё об азбуке Морзе. Спрашивайте!</li>
+				<li>Меня зовут Морзе-бот! Я помогу вам изучить азбуку Морзе.</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О СЕБЕ</pattern>
+		<template>
+			<srai>КТО ТЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ТАКОЕ</pattern>
+		<template>
+			<srai>КТО ТЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ТЫ КТО</pattern>
+		<template>
+			<srai>КТО ТЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ТЕБЯ ЗОВУТ</pattern>
+		<template>
+			<random>
+				<li>Меня зовут Морзе-бот!</li>
+				<li>Я Морзе-бот, приятно познакомиться!</li>
+				<li>
+					Зовите меня Морзе-бот, <get name="user-name"/>!
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ТВОЁ ИМЯ</pattern>
+		<template>
+			<srai>КАК ТЕБЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ТВОЕ ИМЯ</pattern>
+		<template>
+			<srai>КАК ТЕБЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ТВОЁ ИМЯ</pattern>
+		<template>
+			<srai>КАК ТЕБЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ТВОЕ ИМЯ</pattern>
+		<template>
+			<srai>КАК ТЕБЯ ЗОВУТ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== ЧТО УМЕЕШЬ / ДЕЛАЕШЬ ==================== -->
+	<category>
+		<pattern>ЧТО ТЫ УМЕЕШЬ</pattern>
+		<template>
+			Я умею распознавать буквы азбуки Морзе: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь — и рассказывать о них. Спросите меня о любой из них, <get name="user-name"/>!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ МОЖЕШЬ</pattern>
+		<template>Я могу распознавать буквы азбуки Морзе: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь — и рассказывать о них. Попробуйте спросить!</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ДЕЛАЕШЬ</pattern>
+		<template>Я умею распознавать буквы азбуки Морзе и рассказывать о них. Хотите узнать что-нибудь интересное?</template>
+	</category>
+
+	<category>
+		<pattern>ЧЕМ ТЫ ЗАНИМАЕШЬСЯ</pattern>
+		<template>
+			<srai>ЧТО ТЫ ДЕЛАЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ПОМОЩЬ</pattern>
+		<template>
+			<srai>ЧТО ТЫ УМЕЕШЬ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HELP</pattern>
+		<template>
+			<srai>ЧТО ТЫ УМЕЕШЬ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== КАКИЕ ОБРАЗЫ / БУКВЫ ==================== -->
+	<category>
+		<pattern>КАКИЕ БУКВЫ</pattern>
+		<template>Я могу распознавать и рассказывать о следующих буквах азбуки Морзе: А (·−), Г (−−·), Е (·), З (−−··), Н (−·), П (·−−·), Т (−), Ц (−·−·), Ш (−−−−), Ь (−··−). Спросите о любой!</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ ОБРАЗЫ *</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ БУКВЫ *</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ ОБРАЗЫ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>СПИСОК БУКВ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО МОЖЕШЬ РАСПОЗНАТЬ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО УМЕЕШЬ РАСПОЗНАВАТЬ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКИЕ БУКВЫ ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>КАКИЕ БУКВЫ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== АЗБУКА МОРЗЕ ОБЩЕЕ ==================== -->
+	<category>
+		<pattern>ЧТО ТАКОЕ АЗБУКА МОРЗЕ</pattern>
+		<template>Азбука Морзе — способ кодирования букв и цифр с помощью точек (·) и тире (−). Изобретена Сэмюэлем Морзе в 1838 году. Используется в радиосвязи, а сигнал SOS (···−−−···) известен во всём мире!</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ОБ АЗБУКЕ МОРЗЕ</pattern>
+		<template>
+			<srai>ЧТО ТАКОЕ АЗБУКА МОРЗЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О МОРЗЕ</pattern>
+		<template>
+			<srai>ЧТО ТАКОЕ АЗБУКА МОРЗЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КТО ПРИДУМАЛ АЗБУКУ МОРЗЕ</pattern>
+		<template>Азбуку Морзе изобрёл американец Сэмюэль Финли Бриз Морзе в 1838 году. Интересно, что он был художником-портретистом, а не инженером!</template>
+	</category>
+
+	<!-- ==================== БУКВА А ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ А</pattern>
+		<template>
+			<think>
+				<set name="topic">А</set>
+			</think>
+			<random>
+				<li>Буква А в азбуке Морзе: ·− (точка-тире). Это одна из самых часто используемых букв!</li>
+				<li>А — это ·− (точка-тире). Легко запомнить: короткий-длинный!</li>
+				<li>Буква А кодируется как ·− (точка-тире). Мнемоника для запоминания: "ай-ДАА"!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ОБ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ ОБ А</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ А</pattern>
+		<template>
+			<srai>ФАКТ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О А</pattern>
+		<template>
+			<srai>ФАКТ А</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ ОБ А</pattern>
+		<template>
+			<srai>ФАКТ А</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Г ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Г</pattern>
+		<template>
+			<think>
+				<set name="topic">Г</set>
+			</think>
+			<random>
+				<li>Буква Г в азбуке Морзе: −−· (тире-тире-точка). Мнемоника: "Гаа-раа-ж"!</li>
+				<li>Г — это −−· (два тире и точка). Звучит как "Гаа-раа-жи".</li>
+				<li>Буква Г кодируется как −−· (тире-тире-точка). Два длинных и один короткий!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Г</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Г</pattern>
+		<template>
+			<srai>ФАКТ Г</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Г</pattern>
+		<template>
+			<srai>ФАКТ Г</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Е ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Е</pattern>
+		<template>
+			<think>
+				<set name="topic">Е</set>
+			</think>
+			<random>
+				<li>Буква Е в азбуке Морзе: · (одна точка). Самый короткий символ!</li>
+				<li>Е — это просто · (точка). Самая простая буква для запоминания и передачи!</li>
+				<li>Буква Е кодируется одной точкой (·). Проще не бывает!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Е</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Е</pattern>
+		<template>
+			<srai>ФАКТ Е</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Е</pattern>
+		<template>
+			<srai>ФАКТ Е</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА З ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ З</pattern>
+		<template>
+			<think>
+				<set name="topic">З</set>
+			</think>
+			<random>
+				<li>Буква З в азбуке Морзе: −−·· (тире-тире-точка-точка). Мнемоника: "Заа-каа-ти-ки"!</li>
+				<li>З — это −−·· (два тире, две точки). Звучит как "Заа-моо-чи-ки".</li>
+				<li>Буква З кодируется как −−·· Два длинных сигнала, затем два коротких!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О З</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ З</pattern>
+		<template>
+			<srai>ФАКТ З</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О З</pattern>
+		<template>
+			<srai>ФАКТ З</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Н ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Н</pattern>
+		<template>
+			<think>
+				<set name="topic">Н</set>
+			</think>
+			<random>
+				<li>Буква Н в азбуке Морзе: −· (тире-точка). Мнемоника: "Ноо-мер"!</li>
+				<li>Н — это −· (тире и точка). Короткий и чёткий сигнал!</li>
+				<li>Буква Н кодируется как −· Один длинный, один короткий!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Н</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Н</pattern>
+		<template>
+			<srai>ФАКТ Н</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Н</pattern>
+		<template>
+			<srai>ФАКТ Н</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА П ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ П</pattern>
+		<template>
+			<think>
+				<set name="topic">П</set>
+			</think>
+			<random>
+				<li>Буква П в азбуке Морзе: ·−−· (точка-тире-тире-точка). Мнемоника: "Пи-лаа-неё-ры"!</li>
+				<li>П — это ·−−· (точка, два тире, точка). Симметричный сигнал!</li>
+				<li>Буква П кодируется как ·−−· Красивый палиндром!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О П</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ П</pattern>
+		<template>
+			<srai>ФАКТ П</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О П</pattern>
+		<template>
+			<srai>ФАКТ П</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Т ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Т</pattern>
+		<template>
+			<think>
+				<set name="topic">Т</set>
+			</think>
+			<random>
+				<li>Буква Т в азбуке Морзе: − (одно тире). Самая простая наряду с Е!</li>
+				<li>Т — это − (тире). Одно длинное "Таак"!</li>
+				<li>Буква Т кодируется одним тире (−). Максимально просто!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Т</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Т</pattern>
+		<template>
+			<srai>ФАКТ Т</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Т</pattern>
+		<template>
+			<srai>ФАКТ Т</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Ц ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Ц</pattern>
+		<template>
+			<think>
+				<set name="topic">Ц</set>
+			</think>
+			<random>
+				<li>Буква Ц в азбуке Морзе: −·−· (тире-точка-тире-точка). Мнемоника: "Цаа-пли-наа-ши"!</li>
+				<li>Ц — это −·−· (чередование тире и точки). Ритмичный сигнал!</li>
+				<li>Буква Ц кодируется как −·−· Чередование длинных и коротких!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Ц</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Ц</pattern>
+		<template>
+			<srai>ФАКТ Ц</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Ц</pattern>
+		<template>
+			<srai>ФАКТ Ц</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Ш ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Ш</pattern>
+		<template>
+			<think>
+				<set name="topic">Ш</set>
+			</think>
+			<random>
+				<li>Буква Ш в азбуке Морзе: −−−− (четыре тире). Самый длинный сигнал среди наших букв!</li>
+				<li>Ш — это −−−− (четыре тире). Мнемоника: "Шаа-роо-ваа-ры"!</li>
+				<li>Буква Ш кодируется как −−−− Четыре длинных сигнала подряд!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Ш</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Ш</pattern>
+		<template>
+			<srai>ФАКТ Ш</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Ш</pattern>
+		<template>
+			<srai>ФАКТ Ш</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БУКВА Ь ==================== -->
+	<category>
+		<pattern>РАССКАЖИ О БУКВЕ Ь</pattern>
+		<template>
+			<think>
+				<set name="topic">Ь</set>
+			</think>
+			<random>
+				<li>Буква Ь (мягкий знак) в азбуке Морзе: −··− (тире-точка-точка-тире). Мнемоника: "Тоо-ви-щи-ще"!</li>
+				<li>Ь — это −··− (тире, две точки, тире). Интересный факт: мягкий знак имеет тот же код, что и буква X в международной азбуке!</li>
+				<li>Мягкий знак кодируется как −··− Симметричный код!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТАКОЕ Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БУКВА Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>МЯГКИЙ ЗНАК</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ О МЯГКОМ ЗНАКЕ</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЗНАЧИТ Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАК ПИШЕТСЯ Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О БУКВЕ Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О Ь</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ТЫ ЗНАЕШЬ О МЯГКОМ ЗНАКЕ</pattern>
+		<template>
+			<srai>РАССКАЖИ О БУКВЕ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О БУКВЕ Ь</pattern>
+		<template>
+			<srai>ФАКТ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О Ь</pattern>
+		<template>
+			<srai>ФАКТ Ь</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ О МЯГКОМ ЗНАКЕ</pattern>
+		<template>
+			<srai>ФАКТ Ь</srai>
+		</template>
+	</category>
+
+	<!-- ==================== ФАКТЫ О БУКВАХ ==================== -->
+	<category>
+		<pattern>ФАКТ А</pattern>
+		<template>
+			<think>
+				<set name="topic">А</set>
+			</think>
+			Интересный факт: буква А — одна из самых частых в русском языке, поэтому её код (·−) сделали коротким для экономии времени передачи!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Г</pattern>
+		<template>
+			<think>
+				<set name="topic">Г</set>
+			</think>
+			Интересный факт: код буквы Г (−−·) совпадает с международным кодом буквы G. Это неслучайно — русскую азбуку Морзе адаптировали из международной!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Е</pattern>
+		<template>
+			<think>
+				<set name="topic">Е</set>
+			</think>
+			Интересный факт: буква Е (·) — самая частая буква в русском языке, поэтому ей присвоен самый короткий код. Это принцип азбуки Морзе — частые символы короче!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ З</pattern>
+		<template>
+			<think>
+				<set name="topic">З</set>
+			</think>
+			Интересный факт: код буквы З (−−··) является зеркальным отражением кода буквы Ж (···−). Радисты используют это для запоминания!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Н</pattern>
+		<template>
+			<think>
+				<set name="topic">Н</set>
+			</think>
+			Интересный факт: код Н (−·) совпадает с международной буквой N. Во время Второй мировой войны радисты передавали тысячи сообщений в день!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ П</pattern>
+		<template>
+			<think>
+				<set name="topic">П</set>
+			</think>
+			Интересный факт: буква П (·−−·) имеет симметричный код — он одинаково читается слева направо и справа налево. Таких букв немного!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Т</pattern>
+		<template>
+			<think>
+				<set name="topic">Т</set>
+			</think>
+			Интересный факт: буква Т (−) вместе с Е (·) образуют основу азбуки Морзе. Все остальные буквы — комбинации точек и тире различной длины!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Ц</pattern>
+		<template>
+			<think>
+				<set name="topic">Ц</set>
+			</think>
+			Интересный факт: код буквы Ц (−·−·) в международной азбуке соответствует букве C. Буква Ц есть только в кириллической азбуке Морзе!
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Ш</pattern>
+		<template>
+			<think>
+				<set name="topic">Ш</set>
+			</think>
+			Интересный факт: код Ш (−−−−) — четыре тире подряд! Это один из самых длинных кодов. Для сравнения, цифра 0 тоже состоит из пяти тире (−−−−−).
+		</template>
+	</category>
+
+	<category>
+		<pattern>ФАКТ Ь</pattern>
+		<template>
+			<think>
+				<set name="topic">Ь</set>
+			</think>
+			Интересный факт: мягкий знак Ь (−··−) совпадает с международным кодом буквы X. Это связано с тем, что звук Ь не имеет аналога в латинице!
+		</template>
+	</category>
+
+	<!-- ==================== ПРОДОЛЖЕНИЕ РАЗГОВОРА О ТЕКУЩЕЙ ТЕМЕ ==================== -->
+	<category>
+		<pattern>ЕЩЕ</pattern>
+		<template>
+			<srai>
+				ФАКТ <get name="topic"/>
+			</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЕЩЁ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ЕЩЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ЕЩЁ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ПОДРОБНЕЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ПОДРОБНЕЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ПОДРОБНЕЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЁ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЁ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ *</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЁ *</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЕ *</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЁ *</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ТЫ О НЕЙ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЁ ТЫ О НЕЙ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЕ ТЫ О НЕЙ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЁ ТЫ О НЕЙ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЕ ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО ЕЩЁ ТЫ ЗНАЕШЬ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЕ ТЫ ЗНАЕШЬ О НЕЙ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ЧТО ЕЩЁ ТЫ ЗНАЕШЬ О НЕЙ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ЕЩЕ ПРО ЭТО</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>РАССКАЖИ ЕЩЁ ПРО ЭТО</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ПРОДОЛЖАЙ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ ЕЩЕ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДАВАЙ ЕЩЁ</pattern>
+		<template>
+			<srai>ЕЩЕ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== О ЧЕМ МЫ ГОВОРИМ ==================== -->
+	<category>
+		<pattern>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</pattern>
+		<template>
+			Мы разговариваем о букве <get name="topic"/> в азбуке Морзе, <get name="user-name"/>.
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЁМ МЫ РАЗГОВАРИВАЕМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЕМ МЫ РАЗГОВАРИВАЕМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЁМ МЫ РАЗГОВАРИВАЕМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЁМ МЫ ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЕМ МЫ ГОВОРИЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЁМ МЫ ГОВОРИЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЕМ МЫ РАЗГОВАРИВАЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЁМ МЫ РАЗГОВАРИВАЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>КАКАЯ ТЕМА</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А КАКАЯ У НАС ТЕМА</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А ЧТО У НАС ЗА ТЕМА</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЕМ РЕЧЬ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О ЧЁМ РЕЧЬ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ПРО ЧТО МЫ ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О КАКОЙ БУКВЕ ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>О КАКОЙ БУКВЕ МЫ ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЁМ МЫ СЕЙЧАС ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЕМ МЫ СЕЙЧАС ГОВОРИМ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЕМ МЫ СЕЙЧАС ГОВОРИЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>А О ЧЁМ МЫ СЕЙЧАС ГОВОРИЛИ</pattern>
+		<template>
+			<srai>О ЧЕМ МЫ РАЗГОВАРИВАЕМ</srai>
+		</template>
+	</category>
+
+	<!-- ==================== ПРОЩАНИЕ ==================== -->
+	<category>
+		<pattern>ПОКА</pattern>
+		<template>
+			<random>
+				<li>
+					До свидания, <get name="user-name"/>! ·−·−· (конец связи)!
+				</li>
+				<li>
+					Пока, <get name="user-name"/>! Возвращайтесь изучать азбуку Морзе!
+				</li>
+				<li>До встречи! −··−·− (конец передачи)!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДО СВИДАНИЯ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДОСВИДАНИЯ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ПРОЩАЙ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>УВИДИМСЯ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>ДО ВСТРЕЧИ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БАЙ</pattern>
+		<template>
+			<srai>ПОКА</srai>
+		</template>
+	</category>
+
+	<!-- ==================== БЛАГОДАРНОСТИ ==================== -->
+	<category>
+		<pattern>СПАСИБО</pattern>
+		<template>
+			<random>
+				<li>
+					Пожалуйста, <get name="user-name"/>! Рад помочь!
+				</li>
+				<li>Не за что! Обращайтесь ещё!</li>
+				<li>
+					Всегда рад помочь, <get name="user-name"/>!
+				</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>БЛАГОДАРЮ</pattern>
+		<template>
+			<srai>СПАСИБО</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>СПАСИБО БОЛЬШОЕ</pattern>
+		<template>
+			<srai>СПАСИБО</srai>
+		</template>
+	</category>
+
+	<!-- ==================== МЕДИА-ТИПЫ ==================== -->
+	<category>
+		<pattern>Аудио</pattern>
+		<template>К сожалению, я не умею слушать аудио. Но если вы услышите ·−·−·−, знайте — это сигнал начала передачи!</template>
+	</category>
+
+	<category>
+		<pattern>Видео</pattern>
+		<template>Видео я пока обрабатывать не умею. Но могу рассказать о буквах азбуки Морзе!</template>
+	</category>
+
+	<!-- ==================== ФОЛЛБЭК ==================== -->
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<random>
+				<li>
+					Извините, <get name="user-name"/>, я не понял. Попробуйте спросить о буквах азбуки Морзе: А, Г, Е, З, Н, П, Т, Ц, Ш, Ь.
+				</li>
+				<li>Я не совсем понял вопрос. Спросите меня о какой-нибудь букве азбуки Морзе!</li>
+				<li>
+					Хм, <get name="user-name"/>, я такое не знаю. Но я отлично разбираюсь в азбуке Морзе!
+				</li>
+			</random>
+		</template>
+	</category>
+
+</aiml>
